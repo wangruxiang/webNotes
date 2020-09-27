@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局——容器</title>
+    <style>
+        /* 一、作用在容器上面的样式属性   参考网址：https://zhuanlan.zhihu.com/p/25303493 */
+        /*  display: flex | inline-flex;       //可以有两种取值 */
+        
+        /*============================  
+            1、flex-direction: 决定主轴的方向(即项目的排列方向) 
+            flex-direction: row | row-reverse | column | column-reverse;
+        ============================*/
+        /* 
+            默认值：row
+                row，主轴为水平方向，起点在左端。
+                row-reverse：主轴为水平方向，起点在右端
+                column：主轴为垂直方向，起点在上沿
+                column-reverse：主轴为垂直方向，起点在下沿
+        */
+
+        /*============================
+            2、flex-wrap: 决定容器内项目是否可换行
+            flex-wrap: nowrap | wrap | wrap-reverse;
+        ============================*/
+        /* 
+            默认值：nowrap
+                nowrap 不换行，即当主轴尺寸固定时，当空间不足时，项目尺寸会随之调整而并不会挤到下一行。
+                wrap：项目主轴总尺寸超出容器时换行，第一行在上方
+                wrap-reverse：换行，第一行在下方
+        */
+
+        /*============================
+            3、justify-content：定义了项目在主轴的对齐方式。
+            justify-content: flex-start | flex-end | center | space-between | space-around;
+        ============================*/
+        /* 
+            默认值: flex-start
+                flex-start 左对齐
+                flex-end：右对齐
+                center：居中
+                space-between：两端对齐，项目之间的间隔相等，即剩余空间等分成间隙。
+                space-around：每个项目两侧的间隔相等，所以项目之间的间隔比项目与边缘的间隔大一倍。
+         */
+
+        /*============================
+            4、align-items: 定义了项目在交叉轴上的对齐方式
+            align-items: flex-start | flex-end | center | baseline | stretch;
+        ============================*/
+        /* 
+            默认值为 stretch
+                stretch 即如果项目未设置高度或者设为 auto，将占满整个容器的高度
+                flex-start：交叉轴的起点对齐
+                flex-end：交叉轴的终点对齐
+                center：交叉轴的中点对齐
+                baseline: 项目的第一行文字的基线对齐
+        */
+
+        /*============================
+            5、align-content: 定义了多根轴线的对齐方式，如果项目只有一根轴线，那么该属性将不起作用
+            align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+        ============================*/
+        .container{
+            /* width: 300px; */
+            height: 200px;
+            border: 1px solid red;
+            display: flex;  
+            flex-direction: row;  
+            flex-wrap: nowrap;
+            justify-content: space-around; 
+            align-items: stretch;
+        }
+        .containerDiv{border: 1px solid blue;width: 100%;text-align: center;}
+        /* .containerDiv:nth-child(1){height: 100px;}
+        .containerDiv:nth-child(2){height: 200px;}
+        .containerDiv:nth-child(3){height: 300px;}
+        .containerDiv:nth-child(4){height: 400px;}
+        .containerDiv:nth-child(5){height: 500px;} */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="containerDiv">flex item1</div>
+        <div class="containerDiv">flex item2</div>
+        <div class="containerDiv">flex item3</div>
+        <div class="containerDiv">flex item4</div>
+        <div class="containerDiv">flex item5</div>
+    </div>
+</body>
+</html>

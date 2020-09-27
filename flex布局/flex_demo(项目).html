@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局——项目</title>
+    <style>
+        /* =======================
+        一、作用在项目上面的样式属性    参考网址：https://zhuanlan.zhihu.com/p/25303493 
+            有六种属性可运用在 item 项目上：
+            order
+            flex-basis
+            flex-grow
+            flex-shrink
+            flex
+            align-self
+        1. order: 定义项目在容器中的排列顺序，数值越小，排列越靠前，默认值为 0
+        2. flex-basis: 定义了在分配多余空间之前，项目占据的主轴空间，浏览器根据这个属性，计算主轴是否有多余空间
+
+        ==========================*/
+        .container{
+            /* width: 300px; */
+            height: 200px;
+            border: 1px solid red;
+            display: flex;  
+            flex-direction: row;  
+            flex-wrap: nowrap;
+            justify-content: space-around; 
+            align-items: stretch;
+        }
+        .containerDiv{
+            border: 1px solid blue;
+            line-height: 200px;
+            /* order: 0; */
+        }
+        /* .containerDiv:nth-child(1){height: 100px;}
+        .containerDiv:nth-child(2){height: 200px;}
+        .containerDiv:nth-child(3){height: 300px;}
+        .containerDiv:nth-child(4){height: 400px;}
+        .containerDiv:nth-child(5){height: 500px;} */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="containerDiv">7</div>
+        <div class="containerDiv">-1</div>
+        <div class="containerDiv">1</div>
+        <div class="containerDiv">3</div>
+        <div class="containerDiv">5</div>
+    </div>
+</body>
+</html>
